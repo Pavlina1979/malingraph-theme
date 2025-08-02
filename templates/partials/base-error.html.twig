@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>{% if page.title %}{{ page.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    
+    {% block stylesheets %}
+
+    <link rel="preload" href="{{ url('theme://css/style.min.css') }}" as="style">
+    {% do assets.addCss('theme://css/style.min.css') %}
+    {% endblock %}
+
+    {% block javascripts %}
+    {% do assets.addJs('theme://js/popper.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/bootstrap.bundle.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/script.js', {group:'bottom'}) %}
+    {% endblock %}
+
+
+    {% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+    {% endblock %}
+</head>
+
+<body>
+    <a class="skip-to-content-link" href="#hlavni-obsah">
+        Skočit na obsah
+      </a>
+
+    
+
+    
+    <main id="hlavni-obsah">
+        {% block content %}
+        {{ page.content|raw }}
+        {% endblock %}
+    </main>
+
+
+   
+
+</body>
+
+</html>

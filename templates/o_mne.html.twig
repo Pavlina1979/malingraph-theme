@@ -1,0 +1,36 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7 col-md-9 col-12 mx-auto">
+            {{ content|raw }}
+        </div>
+    </div>
+
+
+    <div class="row">
+{% for uvod in page.header.uvod %}
+
+<div class="col-lg-7 col-md-9 col-12 mb-5 {% if loop.index is even %} ms-auto {% endif %}">
+<div class="d-flex align-items-center gap-4">
+    
+    <svg class="omne-ikona text-primary">
+        <use xlink:href="#{{ uvod.ikonka }}"></use>
+      </svg>
+    <h2>{{ uvod.nadpis}}</h2>
+</div>
+
+{{ uvod.text|markdown }}
+{% if uvod.odkaz_tlacitka %}
+{% if uvod.text_tlacitka %}
+<a href="{{ uvod.odkaz_tlacitka}}" class="btn btn-primary">{{ uvod.text_tlacitka}}</a>
+{% endif %}
+{% endif %}
+</div>
+
+{% endfor %}
+</div>
+
+</div>
+{% endblock %}

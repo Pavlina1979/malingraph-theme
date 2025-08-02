@@ -1,0 +1,71 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 col-md-10 col-12 mx-auto">
+				<h1>{{ page.title }}</h1>
+				{{ content|raw }}
+			</div>
+		</div>
+		<div class="row row-cols-2">
+			{% for web in page.header.webdesign %}
+
+				<div class="col-lg-6 col-12 {{ loop.index is odd ? 'pe-lg-4 pe-auto' : 'ps-lg-4 ps-auto' }}">
+					<h2 class="mt-5">{{ web.nadpis }}</h2>
+
+					{{ web.text|markdown }}
+
+				</div>
+				
+			{% endfor %}
+
+		</div>
+
+
+		<!--<h3 class="text-center mb-4">{{ header.projekty_nadpis }}</h3>
+		<div class="row">
+
+
+			{% for projekt in page.header.projekty.weby %}
+				<div class="col-lg-4 col-12 mb-5">
+					<div class="card h-100">
+						{{ page.media[projekt.foto].loading('lazy').width().height().html(projekt.foto.jmeno, projekt.foto.jmeno, 'img-fluid mb-3')|raw }}
+						<div class="card-body d-flex flex-column justify-content-between">
+							<div>
+								<h4 class="card-title">{{ projekt.jmeno }}</h4>
+								{{ projekt.text|markdown }}
+							</div>
+
+						</div>
+						<a href="{{ projekt.link }}" class="btn btn-primary mt-3" target="_blank">{{ projekt.text_tlacitka }}</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>-->
+
+
+		<h3 class="text-center mb-4 mt-5">{{ header.projekty_nadpis }}</h3>
+		<div class="row">
+
+
+			{% for p in page.collection %}
+
+				<div class="col-lg-4 col-12 mb-5">
+					<div class="card h-100">
+					{{ p.media[p.header.uvodni_obrazek].loading('lazy').width().height().html(p.header.uvodni_obrazek_popis, p.header.uvodni_obrazek_popis, 'img-fluid')|raw }}
+						{# {{ p.media|first.loading('lazy').width().height().html(projekt.foto.jmeno, projekt.foto.jmeno, 'img-fluid mb-3')|raw }} #}
+						<div class="card-body d-flex flex-column justify-content-between">
+
+								<h4 class="card-title my-2">{{ p.title }}</h4>
+
+						</div>
+						<a href="{{ p.url }}" class="btn btn-primary">Detail</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+
+{% endblock %}

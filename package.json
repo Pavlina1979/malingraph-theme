@@ -1,0 +1,23 @@
+{
+  "name": "malingraph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel dev:*",
+    "dev:css": "sass --watch --style compressed scss/styles.scss css/style.min.css",
+    "dev:serve-dev": "browser-sync start --proxy 'localhost/malingraph' --files 'templates/**/*.twig, css/*.css, scss/*.css !node_modules/**/*.html'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@popperjs/core": "^2.11.7",
+    "bootstrap": "^5.2.3",
+    "browser-sync": "^3.0.4",
+    "npm-run-all": "^1.7.0",
+    "sass": "^1.60.0"
+  },
+  "dependencies": {
+    "glightbox": "^3.2.0"
+  }
+}

@@ -1,0 +1,9 @@
+<div class="socialni-site d-flex me-lg-4 gap-1 mb-4 mb-lg-0 mt-3 mt-lg-0 justify-content-center">
+    {% for social in page.header.social_icons %}
+    <a href="{{ social.odkaz }}" title="{{ social.text }}" class="p-2" target="_blank">
+      <svg class="socialni-site-ikonka d-block">
+        <use xlink:href="#{{ social.ikonka }}"></use>
+      </svg>
+    </a>          
+    {% endfor %}
+  </div>

@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-xl">
+    <div class="container py-1">
+      
+      {% if page.home %}
+      <div class="navbar-brand" href="{{ home_url }}" title="Malingraph">
+        {{ media['theme://img/logo.svg'].attribute('widht', 170).html(site.title,site.title,'img-fluid')|raw }}
+      </div>
+      {% else %}
+      <a class="navbar-brand" href="{{ home_url }}" title="Malingraph">
+        {{ media['theme://img/logo.svg'].attribute('widht', 170).html(site.title,site.title,'img-fluid')|raw }}
+      </a>
+    
+      {% endif %}
+      
+   
+
+      
+      <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navIcon">&nbsp;</span>
+    </button>
+      <div class="collapse navbar-collapse mt-2 mt-lg-0 align-items-center" id="navbarSupportedContent">
+        {% include 'partials/navigation.html.twig' %}
+        {% include "partials/socialni-site.html.twig" with {"page": page.find("/socialni-site", true)} %} 
+        {% include 'partials/langswitcher.html.twig' %}
+
+        
+      </div>
+
+      
+    </div>
+  </nav>

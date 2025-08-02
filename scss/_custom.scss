@@ -1,0 +1,8 @@
+@use 'variables' as var;
+@use '../node_modules/bootstrap/scss/bootstrap.scss' with (
+  $theme-colors: (
+  "primary":    var.$primary,
+  "secondary":    var.$secondary,
+  "tertiary":    var.$tertiary,
+),
+);

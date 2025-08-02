@@ -1,0 +1,17 @@
+name: Malingraph
+slug: malingraph
+type: theme
+version: 1.0.0
+description: Theme for Malingraph website
+icon: microchip
+author:
+  name: Pavlina
+  email: pavlina.malinkova@email.cz
+  url: https://www.malingraph.cz
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose

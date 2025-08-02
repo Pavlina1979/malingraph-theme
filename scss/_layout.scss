@@ -1,0 +1,157 @@
+@use 'variables' as var;
+
+/* fira-sans-regular - latin_latin-ext */
+@font-face {
+	font-display: swap;
+	/* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Fira Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonty/fira-sans-v16-latin_latin-ext-regular.woff2') format('woff2');
+}
+
+/* fira-sans-700 - latin_latin-ext */
+@font-face {
+	font-display: swap;
+	/* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Fira Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../fonty/fira-sans-v16-latin_latin-ext-700.woff2') format('woff2');
+
+}
+
+/* fira-sans-extra-condensed-600 - latin_latin-ext */
+@font-face {
+	font-display: swap;
+	/* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Fira Sans Extra Condensed';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../fonty/fira-sans-extra-condensed-v10-latin_latin-ext-600.woff2') format('woff2');
+
+}
+
+body {
+	font-size: 1.25rem;
+	font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.obsah {
+	flex: 1;
+}
+
+
+.skip-to-content-link {
+	background: var.$primary;
+	color: black;
+	font-size: 1.8rem;
+	left: 50%;
+	padding: 8px;
+	position: absolute;
+	top: -100%;
+	transform: translateX(-50%);
+	transition: top .3s;
+	z-index: 10;
+
+	&:focus {
+		text-decoration: none;
+		top: 0;
+		outline: 0;
+		box-shadow: 0 0 0 3px var.$secondary;
+	}
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin-bottom: 0;
+	font-weight: 600;
+	font-family: 'Fira Sans Extra Condensed';
+}
+
+h1 {
+	font-size: 2.4rem;
+	margin-bottom: 1.5rem;
+
+	@media (min-width: 992px) {
+		font-size: 4rem;
+	}
+
+}
+
+h2 {
+
+	font-size: 2rem;
+	margin-bottom: 1rem;
+
+	@media (min-width: 992px) {
+		font-size: 3.4rem;
+	}
+}
+
+h3 {
+
+	font-size: 1.6rem;
+
+	@media (min-width: 992px) {
+		font-size: 2.8rem;
+	}
+}
+
+h4 {
+	font-size: 1.6rem;
+}
+
+.btn {
+	border-radius: 0;
+	font-size: 1em;
+
+	&-primary {
+		&:focus {
+			outline: 0;
+			box-shadow: 0 0 0 3px var.$secondary;
+		}
+	}
+}
+
+.notices p {
+	margin-bottom: 0;
+	padding-block: .5rem;
+}
+
+.breadcrumbs {
+	#breadcrumbs {
+		padding-inline-start: 0;
+		height: auto;
+	}
+
+	a {
+		text-decoration: none !important;
+		background-color: var.$primary;
+		color: white;
+		padding: .3rem;
+		border: 2px solid var.$primary;
+		border-radius: .2rem;
+		transition: all .2s ease;
+
+		&:hover {
+			background-color: transparent;
+			color: var.$primary;
+		}
+	}
+
+	span {
+		padding: 0 !important;
+	}
+}
+
+.breadcrumb-divider {
+	&::after {
+		content: ' \BB ';
+	}
+}
