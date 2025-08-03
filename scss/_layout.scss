@@ -47,7 +47,7 @@ body {
 
 .skip-to-content-link {
 	background: var.$primary;
-	color: black;
+	color: white;
 	font-size: 1.8rem;
 	left: 50%;
 	padding: 8px;
@@ -57,7 +57,7 @@ body {
 	transition: top .3s;
 	z-index: 10;
 
-	&:focus {
+	&:focus-visible {
 		text-decoration: none;
 		top: 0;
 		outline: 0;
@@ -110,13 +110,6 @@ h4 {
 .btn {
 	border-radius: 0;
 	font-size: 1em;
-
-	&-primary {
-		&:focus {
-			outline: 0;
-			box-shadow: 0 0 0 3px var.$secondary;
-		}
-	}
 }
 
 .notices p {
@@ -125,6 +118,7 @@ h4 {
 }
 
 .breadcrumbs {
+
 	#breadcrumbs {
 		padding-inline-start: 0;
 		height: auto;

@@ -1,9 +1,11 @@
 @use 'variables' as var;
+
 .footer {
-    a:focus {
-		outline: 0;
-		box-shadow: 0 0 0 3px var.$primary;
-	}
+    a:focus-visible {
+        outline: 0;
+        box-shadow: 0 0 0 3px white;
+    }
+
     .socialni-site-ikonka {
         color: white;
     }
