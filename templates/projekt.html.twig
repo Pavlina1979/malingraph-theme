@@ -40,9 +40,12 @@
     <div class="col-lg-7 col-12 mx-auto mb-4">
       {{ page.content|raw }}
     </div>
+
+    {% if page.header.link %}    
     <div class="col-lg-7 col-12 mx-auto mb-5">
     <a href="{{ page.header.link }}" target="_blank" class="btn btn-primary">{{ page.header.text_tlacitka }}</a>
     </div>
+    {% endif %}
   </div>
   
 </div>
