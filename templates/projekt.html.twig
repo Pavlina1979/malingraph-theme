@@ -23,11 +23,11 @@
   
 </div>
 <div class="container-fluid">
-  <div class="row">
+  <div class="d-flex justify-content-center gap-4 flex-md-row flex-column">
     {% for item in page.header.lightbox %}
-    <div class="col-md col-12">
-      <a href="{{ page.url()}}/{{item.obrazek}}" class="glightbox d-block" data-glightbox="description: {{ item.popis }}">
-        {{ page.media[item.obrazek].width().height().html(item.popis, item.popis, 'img-fluid mb-md-0 mb-4')|raw }}
+    <div class="d-flex justify-content-center">
+      <a href="{{ page.url()}}/{{item.obrazek}}" class="glightbox" data-glightbox="description: {{ item.popis }}">
+        {{ page.media[item.obrazek].cropResize(400,400).html(item.popis, item.popis, 'img-fluid mb-md-0 mb-4')|raw }}
       </a>
     </div>
     {% endfor %}
