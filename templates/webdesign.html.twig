@@ -53,7 +53,7 @@
 
 				<div class="col-lg-4 col-12 mb-5">
 					<div class="card h-100">
-					<a href="{{ p.url }}">
+					<a href="{{ p.url }}" class="d-block projekt-image">
 					{{ p.media[p.header.uvodni_obrazek].loading('lazy').width().height().html(p.header.uvodni_obrazek_popis, p.header.uvodni_obrazek_popis, 'img-fluid')|raw }}
 					</a>
 						{# {{ p.media|first.loading('lazy').width().height().html(projekt.foto.jmeno, projekt.foto.jmeno, 'img-fluid mb-3')|raw }} #}

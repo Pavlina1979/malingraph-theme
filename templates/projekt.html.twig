@@ -23,9 +23,9 @@
   
 </div>
 <div class="container-fluid">
-  <div class="d-flex justify-content-center gap-4 flex-md-row flex-column">
+  <div class="d-flex justify-content-center gap-4 flex-lg-row flex-md-column">
     {% for item in page.header.lightbox %}
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center gallery-thumbnail">
       <a href="{{ page.url()}}/{{item.obrazek}}" class="glightbox" data-glightbox="description: {{ item.popis }}">
         {{ page.media[item.obrazek].cropResize(400,400).html(item.popis, item.popis, 'img-fluid mb-md-0 mb-4')|raw }}
       </a>

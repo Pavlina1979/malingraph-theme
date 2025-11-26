@@ -9,3 +9,8 @@
     list-style: none;
   }
 }
+
+.gallery-thumbnail img {
+  height: 250px;
+  object-fit: cover;
+}
